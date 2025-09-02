@@ -7,7 +7,7 @@
 <meta name="description" content="AJ Media Studio: diseño gráfico, creación de contenido, community manager y pack completo. Agenda tu servicio y potencia tu marca." />
 <style>
   :root{
-    --accent:#ff7a00;
+    --accent:#ff7a00; /* naranjo */
     --bg1:#000; --bg2:#0b0b0b; --text:#fff; --muted:#cfcfcf; --card:#121212;
     --radius:16px; --shadow:0 14px 40px rgba(0,0,0,.45);
     --maxw:1100px;
@@ -25,17 +25,61 @@
   .container{max-width:var(--maxw); margin:auto; padding:40px 18px}
   header{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); background:rgba(0,0,0,.5); border-bottom:1px solid rgba(255,255,255,.08)}
   .nav{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 18px; max-width:var(--maxw); margin:auto}
-  .brand{display:flex; gap:12px; align-items:center}
-  .brand img{height:50px; border-radius:6px}
+  .brand{display:flex; gap:10px; align-items:center}
+  .logo{width:42px; height:42px; border-radius:12px; background:linear-gradient(135deg, var(--accent), #ffb67f); display:grid; place-items:center; color:#111; font-weight:800}
   nav ul{list-style:none; display:flex; gap:14px; padding:0; margin:0; flex-wrap:wrap}
   nav a{padding:8px 10px; border-radius:10px}
   nav a:hover{background:rgba(255,255,255,.08)}
 
+  /* Hero */
+  .hero{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center}
+  @media (max-width: 980px){ .hero{grid-template-columns:1fr} }
+  .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.08)}
+  .badge .dot{width:8px; height:8px; border-radius:999px; background:var(--accent)}
   h1{font-size: clamp(28px, 4.6vw, 46px); line-height:1.1; margin:12px 0 6px}
   .lead{color:var(--muted); margin:0 0 14px}
   .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
   .btn{padding:12px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#1a1a1a; color:#fff; font-weight:700; cursor:pointer}
+  .btn:hover{transform:translateY(-1px)}
   .btn-primary{background:var(--accent); color:#111; border:none}
+
+  /* Secciones */
+  .section{margin-top:50px}
+  .section h2{font-size: clamp(22px, 3vw, 34px); margin:0 0 6px}
+  .sub{color:var(--muted); margin:0 0 18px}
+
+  .card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px}
+  .grid-3{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px}
+  .grid-2{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px}
+  @media (max-width: 900px){ .grid-3{grid-template-columns:1fr 1fr} }
+  @media (max-width: 640px){ .grid-3, .grid-2{grid-template-columns:1fr} }
+
+  /* Bullets tipo “beneficios” */
+  .bullets{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  @media (max-width: 700px){ .bullets{grid-template-columns:1fr} }
+  .li{display:flex; gap:10px; align-items:flex-start; padding:12px; border:1px solid rgba(255,255,255,.08); border-radius:12px; background:#0f0f0f}
+  .li b{color:#fff}
+
+  /* Planes */
+  .price{font-size:28px; font-weight:900; color:var(--accent)}
+  .plan ul{margin:6px 0 0 18px; color:var(--muted)}
+  .plan .btn{margin-top:8px}
+
+  /* Galería/Video (placeholders) */
+  .gallery{display:grid; grid-template-columns:repeat(4, 1fr); gap:10px}
+  @media (max-width: 900px){ .gallery{grid-template-columns:repeat(3, 1fr)} }
+  @media (max-width: 640px){ .gallery{grid-template-columns:repeat(2, 1fr)} }
+  .gallery a{position:relative; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+  .gallery a::after{content:"Ver"; position:absolute; right:8px; bottom:8px; padding:4px 8px; background:rgba(0,0,0,.55); border-radius:999px; font-size:12px}
+
+  /* Contacto (blanco) */
+  .contact{background:#fff; color:#111; border:1px solid #eee}
+  .contact label{display:block; font-weight:700; margin:10px 0 6px}
+  .contact input,.contact select,.contact textarea{width:100%; padding:12px; border-radius:10px; border:1px solid #dcdcdc; background:#fff; font:inherit}
+  .contact textarea{min-height:120px; resize:vertical}
+  .contact .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+  .what{background:#25D366; color:#111; font-weight:900; border:none; padding:12px 14px; border-radius:10px; cursor:pointer}
+  .clear{background:#f2f2f2; border:1px solid #e5e5e5; padding:12px 14px; border-radius:10px; cursor:pointer}
 
   footer{border-top:1px solid rgba(255,255,255,.08); padding:28px 18px; color:var(--muted)}
   .foot{max-width:var(--maxw); margin:auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
@@ -45,12 +89,8 @@
 <header>
   <div class="nav">
     <div class="brand">
-      <!-- Logo AJ -->
-      <img src="73ACFAE6-837A-4A30-9330-BF9FC66A6F06.jpeg" alt="AJ Media Studio Logo">
-      <div>
-        <strong>AJ Media Studio</strong><br>
-        <small style="color:var(--accent)">Impulsamos tu marca al siguiente nivel</small>
-      </div>
+      <div class="logo">AJ</div>
+      <strong>AJ Media Studio</strong>
     </div>
     <nav aria-label="principal">
       <ul>
@@ -65,31 +105,208 @@
 </header>
 
 <main class="container">
-  <!-- HERO -->
-  <section>
-    <h1>Agenda tu servicio y potencia tu marca con diseño, contenido y community</h1>
-    <p class="lead">Atendemos en todo Chile. Entregas ágiles, enfoque en resultados y soporte directo por WhatsApp.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#contacto">Contáctanos</a>
-      <a class="btn" href="#planes">Ver planes y precios</a>
+  <!-- HERO con “look” similar -->
+  <section class="hero">
+    <div>
+      <div class="badge"><span class="dot"></span> Agencia creativa y marketing digital</div>
+      <h1>Agenda tu servicio y potencia tu marca con diseño, contenido y community</h1>
+      <p class="lead">Atendemos en todo Chile. Entregas ágiles, enfoque en resultados y soporte directo por WhatsApp.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contacto">Contáctanos</a>
+        <a class="btn" href="#planes">Ver planes y precios</a>
+      </div>
+      <div class="section" id="beneficios">
+        <div class="bullets">
+          <div class="li">✅ <div><b>Todo en un solo lugar</b><br/>Diseño gráfico, creación de contenido, community y pack completo.</div></div>
+          <div class="li">📆 <div><b>Calendario y organización</b><br/>Planificación mensual con publicaciones y reportes.</div></div>
+          <div class="li">🎯 <div><b>Enfoque en ventas</b><br/>Piezas pensadas para convertir y medir resultados.</div></div>
+          <div class="li">🤝 <div><b>Acompañamiento</b><br/>Revisiones y soporte directo por WhatsApp.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta rápida (estilo info lateral) -->
+    <div class="card">
+      <h3 style="margin:0 0 8px">Servicios disponibles</h3>
+      <ul style="margin:0 0 10px 18px; color:var(--muted)">
+        <li>Diseño gráfico</li>
+        <li>Creación de contenido (foto, video, reels)</li>
+        <li>Community manager</li>
+        <li>Pack completo</li>
+      </ul>
+      <a class="btn btn-primary" href="#contacto">Hablar por WhatsApp</a>
     </div>
   </section>
 
-  <!-- Aquí seguirían secciones: beneficios, planes, galería, video, contacto (idénticas al código anterior) -->
+  <!-- PLANES (estructura tipo módulos con CTA) -->
+  <section class="section" id="planes">
+    <h2>Planes</h2>
+    <p class="sub">Transparencia total en precios. Contratación mensual.</p>
+
+    <div class="grid-3">
+      <div class="card plan">
+        <h3 style="margin:0">Diseño gráfico</h3>
+        <div class="price">$150.000</div>
+        <small style="color:var(--muted)">Campaña mensual</small>
+        <ul>
+          <li>12 piezas gráficas</li>
+          <li>Adaptaciones para RRSS</li>
+          <li>1 revisión por pieza</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacto">Quiero este plan</a>
+      </div>
+
+      <div class="card plan">
+        <h3 style="margin:0">Creación de contenido</h3>
+        <div class="price">$300.000</div>
+        <ul>
+          <li>4 sesiones de foto/video</li>
+          <li>8 reels editados</li>
+          <li>Banco de 40 fotos</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacto">Quiero este plan</a>
+      </div>
+
+      <div class="card plan">
+        <h3 style="margin:0">Community manager</h3>
+        <div class="price">$350.000</div>
+        <ul>
+          <li>Calendario mensual</li>
+          <li>12 publicaciones + historias</li>
+          <li>Reporte básico</li>
+        </ul>
+        <a class="btn btn-primary" href="#contacto">Quiero este plan</a>
+      </div>
+    </div>
+
+    <div class="card plan" style="margin-top:16px">
+      <h3 style="margin:0">Pack completo</h3>
+      <div class="price">$600.000</div>
+      <ul>
+        <li>Branding + piezas gráficas</li>
+        <li>Sesiones de foto/video + reels</li>
+        <li>Gestión de RRSS + reportes</li>
+      </ul>
+      <a class="btn btn-primary" href="#contacto">Quiero este plan</a>
+    </div>
+  </section>
+
+  <!-- GALERÍA (trabajos) -->
+  <section class="section" id="trabajos">
+    <h2>Fotografías</h2>
+    <p class="sub">Algunos trabajos y sesiones. Haz clic para ampliar.</p>
+    <div class="gallery">
+      <!-- Reemplaza por tus imágenes -->
+      <a href="https://images.unsplash.com/photo-1553530666-efb3a5c8d6f3?q=80&w=1200&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1553530666-efb3a5c8d6f3?q=80&w=1800&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1553530666-efb3a5c8d6f3?q=80&w=600&auto=format&fit=crop" alt="Trabajo 1"></a>
+      <a href="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1800&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=600&auto=format&fit=crop" alt="Trabajo 2"></a>
+      <a href="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1200&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1800&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=600&auto=format&fit=crop" alt="Trabajo 3"></a>
+      <a href="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop" data-full="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1800&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=600&auto=format&fit=crop" alt="Trabajo 4"></a>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section" id="video">
+    <h2>Video</h2>
+    <p class="sub">Reels, piezas audiovisuales y backstage.</p>
+    <div class="grid-2">
+      <div class="card">
+        <div style="position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="position:absolute; inset:0; width:100%; height:100%; border:0"></iframe>
+        </div>
+      </div>
+      <div class="card">
+        <div style="position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden">
+          <iframe src="https://www.youtube.com/embed/4NRXx6U8ABQ" title="Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="position:absolute; inset:0; width:100%; height:100%; border:0"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <h2>Contacto</h2>
+    <p class="sub">Cuéntanos tu idea y te respondemos a la brevedad.</p>
+    <div class="grid-2">
+      <div class="card contact">
+        <form id="form">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+          <label for="servicio">¿Qué servicio te interesa?</label>
+          <select id="servicio" name="servicio" required>
+            <option value="" disabled selected>Elige una opción</option>
+            <option>Diseño gráfico</option>
+            <option>Creación de contenido</option>
+            <option>Community manager</option>
+            <option>Pack completo</option>
+          </select>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente tu necesidad"></textarea>
+
+          <div class="actions">
+            <button type="submit" class="what">Enviar por WhatsApp</button>
+            <button type="reset" class="clear">Limpiar</button>
+          </div>
+          <small>WhatsApp: +56 9 6366 5927</small>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px">¿Por qué elegir AJ Media Studio?</h3>
+        <ul style="margin:0 0 10px 18px; color:#444">
+          <li>Estrategia creativa aplicada al negocio</li>
+          <li>Entregas ágiles y calendario claro</li>
+          <li>Medición y mejoras continuas</li>
+        </ul>
+        <div class="badge"><span class="dot"></span> Atención en todo Chile</div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="foot">
     <div>© <span id="year"></span> AJ Media Studio</div>
-    <div>
-      <a href="https://instagram.com/ajmediastudio.cl" target="_blank">Instagram</a> · 
-      Facebook · TikTok
-    </div>
+    <div>Instagram · Facebook · TikTok</div>
   </div>
 </footer>
 
+<!-- Lightbox sencillo para galería -->
+<div id="lb" style="position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.88); z-index:999; padding:24px">
+  <button id="lbClose" style="position:absolute; top:14px; right:14px; background:#111; color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:10px; padding:8px 10px; cursor:pointer">✕ Cerrar</button>
+  <img id="lbImg" alt="Vista ampliada" style="max-height:90vh; border-radius:12px; border:1px solid rgba(255,255,255,.2)"/>
+</div>
+
 <script>
+  // Año
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // WhatsApp submit
+  const form = document.getElementById('form');
+  const phone = '56963665927'; // sin +, sin espacios
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const nombre = encodeURIComponent(form.nombre.value.trim());
+    const servicio = encodeURIComponent(form.servicio.value);
+    const mensaje = encodeURIComponent(form.mensaje.value.trim());
+    const text = `Hola, soy ${nombre}. Me interesa: ${servicio}. Detalle: ${mensaje}`;
+    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+  });
+
+  // Lightbox
+  const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+  document.querySelectorAll('.gallery a').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      e.preventDefault();
+      lbImg.src = a.getAttribute('data-full') || a.href;
+      lb.style.display = 'flex';
+    });
+  });
+  document.getElementById('lbClose').onclick = ()=>{ lb.style.display='none'; lbImg.removeAttribute('src'); };
+  lb.addEventListener('click', (e)=>{ if(e.target===lb) { lb.style.display='none'; lbImg.removeAttribute('src'); }});
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lb.style.display='none'; lbImg.removeAttribute('src'); }});
 </script>
 </body>
 </html>
+
