@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AJ Media Studio | Marketing, Diseño y Contenido</title>
+  <meta name="description" content="AJ Media Studio: Diseño gráfico, creación de contenido, community manager y pack completo para tu marca." />
+  <link rel="preload" href="assets/style.css" as="style" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body class="use-bg-image">
+  <header>
+    <div class="header-bar">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" opacity=".6"/><path d="M7 12h10M12 7v10" stroke="currentColor"/></svg>
+        <span>AJ Media Studio</span>
+      </div>
+      <a class="pill" href="https://wa.me/56963659927" target="_blank" rel="noopener">WhatsApp: +56 9 6365 9927</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="kicker" data-animate>Marketing & Contenido</div>
+        <h1 data-animate>Impulsamos tu marca con diseño, estrategia y resultados</h1>
+        <p class="sub" data-animate>Servicios de <strong>Diseño gráfico</strong>, <strong>Creación de contenido</strong>, <strong>Community manager</strong> y <strong>Pack completo</strong>. Enfocados en crecer tus ventas.</p>
+        <div class="badges" data-animate>
+          <span class="badge">Estrategia mensual</span>
+          <span class="badge">Creatividad a medida</span>
+          <span class="badge">Reportes y métricas</span>
+        </div>
+        <div class="cta" data-animate>
+          <a class="primary" href="#planes">Ver planes →</a>
+          <a class="ghost" href="#contacto">Pedir propuesta</a>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <form id="contacto" class="form" onsubmit="enviarForm(event)">
+        <h3 data-animate>¡Conversemos tu proyecto!</h3>
+        <div class="grid">
+          <div><input required name="nombre" placeholder="Nombre *" /></div>
+          <div><input type="email" required name="email" placeholder="Email *" /></div>
+          <div><input required name="fono" placeholder="Celular / WhatsApp *" value="+56 9 6365 9927" /></div>
+          <div>
+            <select name="servicio" required>
+              <option value="">¿Qué servicio te interesa? *</option>
+              <option>Diseño gráfico</option>
+              <option>Creación de contenido</option>
+              <option>Community manager</option>
+              <option>Pack completo</option>
+            </select>
+          </div>
+          <div class="full"><textarea name="msg" rows="3" placeholder="Cuéntanos tu marca, objetivo y plazo."></textarea></div>
+        </div>
+        <p class="note">También puedes escribirnos directo a WhatsApp: +56 9 6365 9927.</p>
+        <button type="submit">Quiero mi propuesta</button>
+        <p id="form-ok" class="note" style="display:none;margin-top:8px">¡Gracias! Te contactaremos muy pronto.</p>
+      </form>
+    </section>
+
+    <!-- PLANES -->
+    <section id="planes" class="wrap" style="padding:0">
+      <div class="cards">
+        <article class="card" data-animate>
+          <h3>Diseño gráfico</h3>
+          <p class="note">Campaña mensual</p>
+          <p class="price">$150.000</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Pack de piezas gráficas para redes</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Adaptaciones a formatos</li>
+          </ul>
+          <div class="cta"><a class="primary" href="#contacto">Lo quiero</a></div>
+        </article>
+
+        <article class="card" data-animate>
+          <h3>Creación de contenido</h3>
+          <p class="price">$300.000</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Reels, fotos y copys</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Plan de contenidos</li>
+          </ul>
+          <div class="cta"><a class="primary" href="#contacto">Lo quiero</a></div>
+        </article>
+
+        <article class="card" data-animate>
+          <h3>Community manager</h3>
+          <p class="price">$350.000</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Gestión diaria redes sociales</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Comentarios, respuestas y DM</li>
+          </ul>
+          <div class="cta"><a class="primary" href="#contacto">Lo quiero</a></div>
+        </article>
+
+        <article class="card" data-animate>
+          <h3>Pack completo</h3>
+          <p class="price">$600.000</p>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Diseño + Contenido + CM</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Estrategia y reportes</li>
+          </ul>
+          <div class="cta"><a class="primary" href="#contacto">Lo quiero</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="wrap">
+      <div class="cols">
+        <div class="card" data-animate>
+          <h3>¿Por qué AJ Media Studio?</h3>
+          <ul class="list">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Creatividad alineada a objetivos de negocio</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Calendario editorial y métricas claras</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7 9 18l-5-5" stroke="currentColor" stroke-width="2"/></svg>Atención cercana y soporte continuo</li>
+          </ul>
+        </div>
+        <div class="card" data-animate>
+          <h3>Contacto directo</h3>
+          <p class="note">WhatsApp: +56 9 6365 9927 · Email: contacto@ajmediastudio.cl</p>
+          <div class="cta"><a class="primary" href="https://wa.me/56963659927" target="_blank" rel="noopener">Escríbenos ahora</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="wrap" id="galeria">
+      <h2 data-animate>Portafolio: Fotos y Video</h2>
+      <p class="sub" data-animate>Algunos trabajos recientes y detrás de cámaras.</p>
+      <div class="gallery">
+        <figure data-animate><img src="assets/foto1.svg" alt="AJ Media Foto 1"/></figure>
+        <figure data-animate><img src="assets/foto2.svg" alt="AJ Media Foto 2"/></figure>
+        <figure data-animate><img src="assets/foto3.svg" alt="AJ Media Foto 3"/></figure>
+        <figure data-animate><img src="assets/foto4.svg" alt="AJ Media Foto 4"/></figure>
+        <figure class="video" data-animate>
+          <video controls src="" poster="assets/foto1.svg"></video>
+        </figure>
+        <figure data-animate>
+          <iframe width="100%" height="220" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de muestra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS (10) -->
+    <section class="wrap">
+      <h2 data-animate>Lo que dicen nuestros clientes</h2>
+      <div class="testis">
+        <blockquote data-animate><p><strong>“Profesionales y rápidos.”</strong> Entregaron piezas perfectas para nuestra campaña.</p><p class="note">— Camila R., retail</p></blockquote>
+        <blockquote data-animate><p><strong>“Nuestro Instagram despegó.”</strong> Pasamos de 0 a 20K en 3 meses.</p><p class="note">— Diego V., cafetería</p></blockquote>
+        <blockquote data-animate><p><strong>“Tranquilidad total.”</strong> Manejan redes, contenidos y pauta sin dolores de cabeza.</p><p class="note">— Paula M., inmobiliaria</p></blockquote>
+        <blockquote data-animate><p><strong>“Creatividad que vende.”</strong> No sólo lindo, también convierte.</p><p class="note">— Jorge A., tecnología</p></blockquote>
+        <blockquote data-animate><p><strong>“Orden y métricas.”</strong> Calendario claro y reportes útiles todas las semanas.</p><p class="note">— Valentina S., educación</p></blockquote>
+        <blockquote data-animate><p><strong>“Respuesta inmediata.”</strong> Cambios en horas, no en días.</p><p class="note">— Nicolás T., logística</p></blockquote>
+        <blockquote data-animate><p><strong>“Fotos y reels top.”</strong> Mejoraron la calidad percibida de nuestra marca.</p><p class="note">— Fernanda Q., estética</p></blockquote>
+        <blockquote data-animate><p><strong>“Crecimos en leads.”</strong> El pack completo fue la mejor decisión.</p><p class="note">— Martín C., automotriz</p></blockquote>
+        <blockquote data-animate><p><strong>“Se involucran.”</strong> Sienten la marca como propia.</p><p class="note">— Sofía L., turismo</p></blockquote>
+        <blockquote data-animate><p><strong>“Excelente relación precio/valor.”</strong> Resultados visibles desde el primer mes.</p><p class="note">— Ricardo P., salud</p></blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="mini">
+      <strong>AJ Media Studio</strong>
+      <span>La Ligua · Chile</span>
+      <span>WhatsApp: +56 9 6365 9927</span>
+      <span>Email: contacto@ajmediastudio.cl</span>
+      <span>© 2025 AJ Media Studio — Todos los derechos reservados</span>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
